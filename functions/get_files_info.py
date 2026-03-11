@@ -24,7 +24,7 @@ def get_dir_contents_info(contents: list[str], target_dir: str):
     content_data_list: list[str] = []
 
     for content in contents:
-        path_to_content: str = os.path.normpath(os.path.join(target_dir, content))
+        path_to_content: str = os.path.join(target_dir, content)
         is_dir = os.path.isdir(path_to_content)
         file_size = os.path.getsize(path_to_content)
         content_data_list.append(f"- {content}: file_size={file_size} bytes, is_dir={is_dir}")
