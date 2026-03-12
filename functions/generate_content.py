@@ -10,7 +10,7 @@ def generate_content(client: genai.Client, messages: list, verbose: bool):
         config=types.GenerateContentConfig(
             tools=[available_functions],
             system_instruction=system_prompt,
-            temperature=2,
+            temperature=1,
         ),
     )
 
