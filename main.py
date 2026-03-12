@@ -7,8 +7,6 @@ from prompts import system_prompt
 from functions.args import parse_args
 from functions.generate_content import generate_content
 from functions.env_or_throw import env_or_throw
-from functions.get_files_info import get_files_info
-from functions.write_file import write_file
 
 def main():
     args = parse_args()
