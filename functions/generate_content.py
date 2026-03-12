@@ -1,10 +1,14 @@
 from google import genai
 from google.genai import types
 
-def generate_content(client: genai.Client, messages: list, verbose: bool, user_prompt: str):
+def generate_content(client: genai.Client, messages: list, verbose: bool, user_prompt: str, system_prompt: str):
     response = client.models.generate_content(
         model="gemini-2.5-flash",
         contents=messages,
+        config=types.GenerateContentConfig(
+            system_instruction=system_prompt,
+            temperature=0
+        ),
     )
     content_metadata = response.usage_metadata
 

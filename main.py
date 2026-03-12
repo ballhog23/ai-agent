@@ -2,6 +2,8 @@ from dotenv import load_dotenv
 from google import genai
 from google.genai import types
 
+from prompts import system_prompt
+
 from functions.args import parse_args
 from functions.generate_content import generate_content
 from functions.env_or_throw import env_or_throw
@@ -19,7 +21,7 @@ def main():
     verbose_check = args.verbose
 
     # call gemini api
-    # generate_content(client, messages, verbose_check, user_prompt)
+    generate_content(client, messages, verbose_check, user_prompt, system_prompt)
 
 
 if __name__ == "__main__":
