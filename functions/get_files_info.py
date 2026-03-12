@@ -1,4 +1,6 @@
 import os
+from google import genai
+from google.genai import types
 
 def get_files_info(working_directory: str, directory: str = "."):
     try:
@@ -30,3 +32,17 @@ def get_dir_contents_info(contents: list[str], target_dir: str):
         content_data_list.append(f"- {content}: file_size={file_size} bytes, is_dir={is_dir}")
 
     return "\n".join(content_data_list)
+
+schema_get_files_info = types.FunctionDeclaration(
+    name="get_files_info",
+    description="Lists files in a specified directory relative to the working directory, providing file size and directory status",
+    parameters=types.Schema(
+        type=types.Type.OBJECT,
+        properties={
+            "directory": types.Schema(
+                type=types.Type.STRING,
+                description="Directory path to list files from, relative to the working directory (default is the working directory itself)",
+            ),
+        },
+    ),
+)
