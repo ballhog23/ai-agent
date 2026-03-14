@@ -1,4 +1,4 @@
-# AI Coding Agent
+# Lok'tar Ogar: A Blood Death Knight AI Coding Agent
 
 A CLI-based AI coding agent built with Python and Google Gemini, following the [Boot.dev](https://boot.dev) AI agents course. The agent operates in an agentic loop — planning, calling tools, observing results, and iterating — until it completes a task or hits a safety limit.
 
